@@ -36,9 +36,13 @@
       "plugin:vue/essential",
       "@vue/prettier"
     ],
-    "rules": {},
     "parserOptions": {
       "parser": "babel-eslint"
+    },
+    "rules": {
+      "vue/html-end-tags": "error",
+      "vue/html-indent": "warning",
+      "vue/html-quotes": "warning"
     }
   },
   "postcss": {
