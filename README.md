@@ -1,5 +1,7 @@
 # cleanbaked-v2
 
+Clean Baked website redesign and major content update! Going to be built on Vue.js and maybe other stuff.
+
 ## Project setup
 ```
 yarn install
