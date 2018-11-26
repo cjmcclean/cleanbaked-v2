@@ -45,6 +45,14 @@
       "vue/html-quotes": "warning"
     }
   },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": false,
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "endOfLine": "lf"
+  },
   "postcss": {
     "plugins": {
       "autoprefixer": {}
@@ -53,7 +61,7 @@
   "browserslist": [
     "> 1%",
     "last 2 versions",
-    "not ie <= 8"
+    "not ie <= 11"
   ],
   "gitHooks": {
     "pre-commit": "lint-staged"
