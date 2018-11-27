@@ -4,8 +4,11 @@
       <img alt="Clean Baked Studios Pie" src="@/assets/logo-pie.png" />
 
       <h1>
-        Clean Baked<br />
-        Studios
+        <span class="logo-clean">Clean</span>&nbsp;&nbsp;<span
+          class="logo-baked"
+          >Baked</span
+        ><br />
+        <span class="logo-studio">Studios</span>
       </h1>
     </div>
 
@@ -26,32 +29,70 @@ export default {
 
 <style lang="scss">
 .sidebar {
-  position: fixed;
+  position: absolute;
   top: 0;
-  left: 12%;
-  width: 200px;
-  padding: 20px 12px;
-  background: $wc-blue;
-
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    right: 0;
-    bottom: -50px;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-top: 50px solid $wc-blue;
-    border-right: 100px solid transparent;
-    border-left: 100px solid transparent;
-  }
+  bottom: 0;
+  left: 0;
+  width: 32%;
+  padding: 2% 4%;
+  background: $cb-blue;
 }
 
 .brand {
+  img {
+    transform: rotate(-12deg) translateX(-2px);
+  }
+
   h1 {
+    margin-top: -44px;
     color: $cb-white;
+    font-family: $leagueSpartan;
     text-transform: uppercase;
+  }
+
+  .logo-clean,
+  .logo-baked {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 32px;
+  }
+
+  .logo-clean {
+    margin-left: -16px;
+    font-size: 52px;
+    font-family: $blackoutMidnight;
+    transform: skew(-2deg, 24deg);
+  }
+
+  .logo-baked {
+    top: 4px;
+    font-size: 56px;
+    font-family: $pacifico;
+    text-transform: initial;
+    transform: skew(2deg, -24deg);
+  }
+
+  .logo-studio {
+    display: inline-block;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: -92px;
+      width: 72px;
+      height: 1px;
+      margin-top: -4px;
+      background: $cb-white;
+    }
+
+    &::after {
+      right: -92px;
+      left: auto;
+    }
   }
 }
 </style>

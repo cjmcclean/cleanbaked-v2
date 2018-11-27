@@ -15,8 +15,19 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        data: `@import "@/assets/css/variables.scss";`
+        data: `@import "@/assets/css/variables.scss"; @import "@assets/css/fonts.scss";`
       }
     }
+  },
+  chainWebpack: config => {
+    config.module
+      .rule('url-loader')
+      .test(/\.(woff2?|eot|ttf|otf)(\?.*)?$/)
+      .use('url-loader')
+      .loader('url-loader')
+      .options({
+        limit: 10000,
+        name: 'fonts/[name].[ext]?[hash]'
+      })
   }
 }
