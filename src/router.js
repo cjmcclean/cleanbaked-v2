@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import Sidebar from './views/Sidebar.vue'
 
 Vue.use(Router)
 
@@ -10,10 +9,7 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      components: {
-        content: Home,
-        sidebar: Sidebar
-      }
+      component: Home
     },
     {
       path: '/about',
@@ -23,6 +19,30 @@ export default new Router({
       // which is lazy-loaded when the route is visited.
       component: () =>
         import(/* webpackChunkName: "about" */ './views/About.vue')
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      component: () =>
+        import(/* webpackChunkName: "contact" */ './views/Contact.vue')
+    },
+    {
+      path: '/portfolio',
+      name: 'portfolio',
+      component: () =>
+        import(/* webpackChunkName: "portfolio" */ './views/Portfolio.vue')
+    },
+    {
+      path: '/process',
+      name: 'process',
+      component: () =>
+        import(/* webpackChunkName: "process" */ './views/Process.vue')
+    },
+    {
+      path: '/vue-docs',
+      name: 'vue-docs',
+      component: () =>
+        import(/* webpackChunkName: "process" */ './views/VueDocs.vue')
     }
   ]
 })

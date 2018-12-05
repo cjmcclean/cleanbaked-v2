@@ -1,8 +1,8 @@
 module.exports = {
   pwa: {
     name: 'Clean Baked Studios',
-    themeColor: '#01568C',
-    msTileColor: '#01568C'
+    themeColor: '#191c26',
+    msTileColor: '#191c26'
   },
 
   lintOnSave: undefined,
@@ -15,7 +15,10 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        data: `@import "@/assets/css/variables.scss"; @import "@assets/css/fonts.scss";`
+        data: `
+          @import "@/assets/css/variables.scss";
+          @import "@/assets/css/fonts.scss";
+        `
       }
     }
   },

@@ -1,9 +1,9 @@
 <template>
-  <section class="sidebar" role="banner">
+  <aside class="sidebar">
     <div class="brand">
       <img alt="Clean Baked Studios Pie" src="@/assets/logo-pie.png" />
 
-      <h1>
+      <h1 aria-label="Clean Baked Studios">
         <span class="logo-clean">Clean</span>&nbsp;&nbsp;<span
           class="logo-baked"
           >Baked</span
@@ -13,7 +13,7 @@
     </div>
 
     <sidebar-nav></sidebar-nav>
-  </section>
+  </aside>
 </template>
 
 <script>
@@ -29,25 +29,36 @@ export default {
 
 <style lang="scss">
 .sidebar {
-  position: absolute;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
+  z-index: 20;
   width: 32%;
   padding: 2% 4%;
   background: $cb-blue;
+  box-shadow: 8px 16px 0 $cb-red, 16px 36px 0 $cb-orange, 24px 0 0 $cb-yellow;
 }
 
 .brand {
   img {
-    transform: rotate(-12deg) translateX(-2px);
+    position: relative;
+    z-index: 10;
+    transform: rotate(-12deg) translateX(-4px);
   }
 
   h1 {
-    margin-top: -44px;
+    position: relative;
+    z-index: 20;
+    margin: 0;
     color: $cb-white;
     font-family: $leagueSpartan;
     text-transform: uppercase;
+    transform: translateY(-44px);
   }
 
   .logo-clean,
@@ -61,20 +72,21 @@ export default {
     margin-left: -16px;
     font-size: 52px;
     font-family: $blackoutMidnight;
-    transform: skew(-2deg, 24deg);
+    transform: skew(-2deg, 28deg);
   }
 
   .logo-baked {
-    top: 4px;
+    top: 2px;
     font-size: 56px;
     font-family: $pacifico;
     text-transform: initial;
-    transform: skew(2deg, -24deg);
+    transform: skew(-2deg, -28deg);
   }
 
   .logo-studio {
     display: inline-block;
     position: relative;
+    letter-spacing: 2px;
 
     &::before,
     &::after {

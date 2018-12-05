@@ -1,10 +1,25 @@
 <template>
   <div id="app">
-    <router-view name="sidebar"></router-view>
+    <sidebar />
 
-    <router-view class="content" name="content"></router-view>
+    <main class="content"><router-view></router-view></main>
+
+    <site-footer />
   </div>
 </template>
+
+<script>
+import Sidebar from '@/components/sidebar.vue'
+import SiteFooter from '@/components/footer.vue'
+
+export default {
+  name: 'clean-baked',
+  components: {
+    Sidebar,
+    SiteFooter
+  }
+}
+</script>
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Pacifico');
@@ -40,9 +55,16 @@ body {
 }
 
 .content {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  position: relative;
+  z-index: 10;
   width: 68%;
   min-height: 100%;
   height: auto;
   margin-left: 32%;
+  padding: 0 24px;
 }
 </style>
