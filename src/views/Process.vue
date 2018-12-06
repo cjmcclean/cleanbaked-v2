@@ -1,7 +1,7 @@
 <template>
   <section class="process">
     <h2>How It Gets Done</h2>
-    <h3>My Process to Building a Site</h3>
+    <p class="lead">My Process to Building a Site</p>
 
     <h4>Discovery</h4>
     <p>
@@ -68,3 +68,13 @@ export default {
   name: 'process'
 }
 </script>
+
+<style scoped lang="scss">
+.process {
+  padding: 0 16% 4% 12%;
+}
+
+.lead {
+  font-size: $size-lg;
+}
+</style>

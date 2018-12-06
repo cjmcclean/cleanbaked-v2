@@ -30,13 +30,117 @@ body {
   height: auto;
 }
 
+html {
+  font-size: 112.5%;
+  line-height: 1.4;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+
+  // nested rule(s)
+  @media (min-width: 640px) {
+    font-size: 125%;
+    line-height: 1.4;
+  }
+
+  @media (min-width: 900px) {
+    font-size: 131.25%;
+  }
+
+  @media (min-width: 1100px) {
+    font-size: 137.5%;
+  }
+}
+
 body {
   margin: 0;
-  font-size: 16px;
 }
 
 * {
   box-sizing: border-box;
+}
+
+* + * {
+  margin-top: 1.05rem;
+}
+
+a,
+div,
+li,
+section,
+span,
+svg {
+  margin-top: 0;
+}
+
+blockquote,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+li,
+ol,
+p,
+pre,
+ul {
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $leagueSpartan;
+}
+
+h2 {
+  font-size: $size-xxl;
+  line-height: 1.15;
+
+  // nested rule(s)
+  * + & {
+    margin-top: 2.1rem;
+  }
+}
+
+h3 {
+  font-size: $size-xl;
+
+  // nested rule(s)
+  * + & {
+    margin-top: 2.1rem;
+  }
+}
+
+h4 {
+  font-size: $size-lg;
+}
+
+h5 {
+  font-size: $size-mdl;
+  text-transform: uppercase;
+}
+
+h6 {
+  font-size: $size-sm;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+[disabled] {
+  background: $cb-black-light !important;
+  border-color: $cb-gray !important;
+  color: $cb-gray !important;
+  cursor: not-allowed !important;
 }
 
 #app {
@@ -48,6 +152,7 @@ body {
   width: 100%;
   height: 100%;
   color: $cb-black;
+  font-size: $size-reg;
   font-family: $lato;
   text-align: center;
   -webkit-font-smoothing: antialiased;
@@ -64,7 +169,8 @@ body {
   width: 68%;
   min-height: 100%;
   height: auto;
-  margin-left: 32%;
+  margin: 0 0 0 32%;
   padding: 0 24px;
+  text-align: left;
 }
 </style>

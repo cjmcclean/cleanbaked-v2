@@ -56,6 +56,7 @@ export default {
     z-index: 20;
     margin: 0;
     color: $cb-white;
+    font-size: 24px;
     font-family: $leagueSpartan;
     text-transform: uppercase;
     transform: translateY(-44px);
@@ -76,7 +77,7 @@ export default {
   }
 
   .logo-baked {
-    top: 2px;
+    top: 0;
     font-size: 56px;
     font-family: $pacifico;
     text-transform: initial;

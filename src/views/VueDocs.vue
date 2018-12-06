@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="docs">
     <img alt="Vue logo" src="@/assets/logo.png" />
     <h2>Vue Documentation</h2>
 
@@ -18,3 +18,10 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+.docs {
+  padding: 0 16% 4% 12%;
+  text-align: center;
+}
+</style>

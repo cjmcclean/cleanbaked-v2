@@ -1,13 +1,18 @@
 <template>
   <footer class="footer">
-    Copyright &copy; 2018-2019 Clean Baked Studios <br />
+    Copyright &copy; {{ currentYear }} Clean Baked Studios <br />
     All Rights Reserved
   </footer>
 </template>
 
 <script>
 export default {
-  name: 'site-footer'
+  name: 'site-footer',
+  data: function() {
+    return {
+      currentYear: new Date().getFullYear()
+    }
+  }
 }
 </script>
 

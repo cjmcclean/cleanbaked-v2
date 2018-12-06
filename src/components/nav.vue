@@ -24,7 +24,7 @@ export default {
     padding: 8px 20px;
     color: $cb-gray-dark;
     font-weight: bold;
-    font-size: 21px;
+    font-size: $size-mdl;
     font-family: $leagueSpartan;
     text-decoration: none;
     text-transform: uppercase;

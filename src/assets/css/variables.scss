@@ -13,6 +13,21 @@ $ostrichInline: 'Ostrich Sans Inline', sans-serif;
 $lato: 'Lato', 'Avenir', Helvetica, Arial, sans-serif;
 $pacifico: 'Pacifico', cursive;
 
+/* Font Sizes */
+$size-xs: 0.75rem; // 12px
+$size-sm: 0.875rem; // 14px
+$size-reg: 1rem; // 16px
+$size-md: 1.125rem; // 18px
+$size-mdl: 1.25rem; // 20px
+$size-lg: 1.5rem; // 24px
+$size-xl: 1.875rem; // 30px
+$size-xxl: 2.25rem; // 36px
+$size-xxxl: 3rem; // 48px
+$size-super: 4rem; // 64px
+
+/* Vertical Rhythm */
+$line-height: 1.375;
+
 /* Colors - Wheeler Central Theme */
 $wc-blue: #01568c;
 $wc-orange: #ff9301;

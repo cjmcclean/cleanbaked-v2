@@ -11,3 +11,9 @@ export default {
   name: 'portfolio'
 }
 </script>
+
+<style scoped lang="scss">
+.portfolio {
+  padding: 0 16% 4% 12%;
+}
+</style>

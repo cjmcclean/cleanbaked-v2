@@ -32,12 +32,28 @@
       me an email below!
     </p>
 
-    <button>My Resume</button>
+    <btn :onClick="resumeClick" ref="resumeBtn">My Resume</btn>
   </section>
 </template>
 
 <script>
+import Btn from '@/components/btn.vue'
+
 export default {
-  name: 'about'
+  name: 'about',
+  components: {
+    Btn
+  },
+  methods: {
+    resumeClick() {
+      this.$refs.resumeBtn.value = '@/assets/myResume_2013.pdf'
+    }
+  }
 }
 </script>
+
+<style scoped lang="scss">
+.about {
+  padding: 0 16% 4% 12%;
+}
+</style>
