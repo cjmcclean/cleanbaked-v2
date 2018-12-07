@@ -41,7 +41,7 @@ export default {
   width: 32%;
   padding: 2% 4%;
   background: $cb-blue;
-  box-shadow: 8px 16px 0 $cb-red, 16px 36px 0 $cb-orange, 24px 0 0 $cb-yellow;
+  box-shadow: 8px 16px 0 $cb-red, 16px 36px 0 $cb-orange, 24px 56px 0 $cb-yellow;
 }
 
 .brand {

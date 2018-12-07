@@ -103,6 +103,7 @@ h6 {
 }
 
 h2 {
+  margin-top: 0.67em;
   font-size: $size-xxl;
   line-height: 1.15;
 

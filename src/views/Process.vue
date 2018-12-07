@@ -71,10 +71,15 @@ export default {
 
 <style scoped lang="scss">
 .process {
-  padding: 0 16% 4% 12%;
+  flex: 1 1 auto;
+  margin-right: -24px;
+  margin-left: -24px;
+  padding: 2.8rem 5.6rem;
 }
 
 .lead {
-  font-size: $size-lg;
+  margin-top: 0.525rem;
+  font-size: $size-mdl;
+  text-transform: uppercase;
 }
 </style>

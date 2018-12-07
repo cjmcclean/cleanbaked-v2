@@ -3,11 +3,11 @@
     <h2>About Me</h2>
 
     <p>
-      I am a 26-year old native of Houston, TX, and have spent most of my life
-      here. I taught myself HTML and CSS in 2007, turning a life-long love of
-      technology into a career. Since then I have been expanding my repertoire,
-      learning Javascript (mostly jQuery-based) and a bit of PHP. I have a
-      background in Advertising through my Bachelor of Arts in
+      I am a {{ myAge }}-year old native of Houston, TX, and have spent most of
+      my life here. I taught myself HTML and CSS in 2007, turning a life-long
+      love of technology into a career. Since then I have been expanding my
+      repertoire, learning Javascript (mostly jQuery-based) and a bit of PHP. I
+      have a background in Advertising through my Bachelor of Arts in
       Communications-Advertising/PR from the University of Houston (UH), which I
       graduated from in 2009. <br /><br />
       I love to play Ultimate Frisbee, which I do as often as possible. I am
@@ -32,7 +32,9 @@
       me an email below!
     </p>
 
-    <btn :onClick="resumeClick" ref="resumeBtn">My Resume</btn>
+    <btn btn-theme="btn-blue" :onClick="resumeClick" ref="resumeBtn"
+      >My Resume</btn
+    >
   </section>
 </template>
 
@@ -44,8 +46,31 @@ export default {
   components: {
     Btn
   },
+  data: function() {
+    return {
+      dateOfBirth: new Date('06/20/1986'),
+      today: new Date()
+    }
+  },
+  computed: {
+    myAge: function() {
+      let age = this.today.getFullYear() - this.dateOfBirth.getFullYear()
+      const m = this.today.getMonth() - this.dateOfBirth.getMonth()
+      // if necessary offset age by -1 for month of year
+      if (
+        m < 0 ||
+        (m === 0 && this.today.getDate() < this.dateOfBirth.getDate())
+      ) {
+        age = age - 1
+      }
+
+      return age
+    }
+  },
   methods: {
     resumeClick() {
+      // eslint-disable-next-line
+      console.log(this.$refs.resumeBtn)
       this.$refs.resumeBtn.value = '@/assets/myResume_2013.pdf'
     }
   }
@@ -54,6 +79,9 @@ export default {
 
 <style scoped lang="scss">
 .about {
-  padding: 0 16% 4% 12%;
+  flex: 1 1 auto;
+  margin-right: -24px;
+  margin-left: -24px;
+  padding: 2.8rem 5.6rem;
 }
 </style>

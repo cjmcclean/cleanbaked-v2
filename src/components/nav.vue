@@ -5,13 +5,20 @@
     <router-link to="/process">Process</router-link>
     <router-link to="/about">About</router-link>
     <router-link to="/contact">Contact</router-link>
-    <router-link to="/vue-docs">Vue Docs</router-link>
+    <router-link to="/vue-docs" v-if="checkMode">Vue Docs</router-link>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'sidebar-nav'
+  name: 'sidebar-nav',
+  computed: {
+    checkMode: function() {
+      const mode = process.env.NODE_ENV
+
+      return mode === 'development' ? true : false
+    }
+  }
 }
 </script>
 
@@ -24,7 +31,7 @@ export default {
     padding: 8px 20px;
     color: $cb-gray-dark;
     font-weight: bold;
-    font-size: $size-mdl;
+    font-size: $size-md;
     font-family: $leagueSpartan;
     text-decoration: none;
     text-transform: uppercase;
@@ -39,7 +46,7 @@ export default {
       position: absolute;
       top: 50%;
       left: 10%;
-      width: 48px;
+      width: 36px;
       height: 1px;
       margin-top: -4px;
       background: $cb-gray-dark;
