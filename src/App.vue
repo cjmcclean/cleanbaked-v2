@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <sidebar />
+    <sidebar class="sidebar" />
 
     <main class="content"><router-view></router-view></main>
 
@@ -93,6 +93,12 @@ ul {
   padding-left: 0;
 }
 
+dl,
+ul,
+ol {
+  padding-left: 1.05rem;
+}
+
 h1,
 h2,
 h3,
@@ -123,11 +129,11 @@ h3 {
 }
 
 h4 {
-  font-size: $size-lg;
+  font-size: $size-mdl;
 }
 
 h5 {
-  font-size: $size-mdl;
+  font-size: $size-md;
   text-transform: uppercase;
 }
 
@@ -160,18 +166,43 @@ h6 {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.sidebar {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 0.67rem;
+
+  // MIN-width: 1140px
+  @media screen and (min-width: 71.25em) {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 20;
+    width: 32%;
+    padding: 2% 4%;
+  }
+}
+
 .content {
   display: flex;
+  overflow-x: hidden;
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: stretch;
   position: relative;
   z-index: 10;
-  width: 68%;
   min-height: 100%;
   height: auto;
-  margin: 0 0 0 32%;
-  padding: 0 24px;
+  padding: 0 2.8rem;
   text-align: left;
+
+  // MIN-width: 1140px
+  @media screen and (min-width: 71.25em) {
+    width: 68%;
+    margin: 0 0 0 32%;
+    padding: 0 24px;
+  }
 }
 </style>

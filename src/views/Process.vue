@@ -1,85 +1,153 @@
 <template>
   <section class="process">
-    <h2>How It Gets Done</h2>
-    <p class="lead">My Process to Building a Site</p>
+    <div class="row">
+      <h2>How It Gets Done</h2>
+      <p class="lead">My Process to Building a Site</p>
+    </div>
+    <!-- /.row -->
 
-    <h4>Discovery</h4>
-    <p>
-      Every project should begin with a discovery phase. The objective is to
-      learn about a project, specifically, its requirements and goals. By
-      obtaining this knowledge and combining it with a study on the client's
-      market and competition a strong, objective focused design can be crafted.
-    </p>
+    <div class="row col2">
+      <div class="block">
+        <h3>Discovery</h3>
+        <p>
+          Every project should begin with a discovery phase. The objective is to
+          learn about a project, specifically, its requirements and goals. By
+          obtaining this knowledge and combining it with a study on the client's
+          market and competition a strong, objective focused design can be
+          crafted.
+        </p>
+      </div>
 
-    <blockquote>Iteration is a cornerstone of impactful design.</blockquote>
+      <div class="block">
+        <pull-quote class="quote">
+          Iteration is a cornerstone of impactful design.
+        </pull-quote>
+      </div>
+    </div>
+    <!-- /.row -->
 
-    <h4>Design</h4>
-    <p>
-      In discovering what a clients needs and wants out of their site, much of
-      the design legwork is already done. Taking that knowledge, a layout
-      focused on delivering results can be formed. Iteration is a cornerstone of
-      impactful design. With this in mind, I like to start on paper putting out
-      as many ideas as I can following the general guidelines of the project. I
-      take the best 1 or 2 ideas into Photoshop or straight into the browser,
-      whichever is more efficient for the project at hand.
-    </p>
+    <div class="row">
+      <h3>Design</h3>
+      <p>
+        In discovering what a clients needs and wants out of their site, much of
+        the design legwork is already done. Taking that knowledge, a layout
+        focused on delivering results can be formed. Iteration is a cornerstone
+        of impactful design. With this in mind, I like to start on paper putting
+        out as many ideas as I can following the general guidelines of the
+        project. I take the best 1 or 2 ideas into Photoshop or straight into
+        the browser, whichever is more efficient for the project at hand.
+      </p>
+    </div>
+    <!-- /.row -->
 
-    <h4>Build</h4>
-    <p>
-      Once I have a mockup or draft site that the client is pleased with, the
-      design is layered onto a CMS. Utilizing the latest techniques such as
-      responsive design helps ensure that a client's site is compatible with as
-      many devices as possible and the major browsers.
-    </p>
+    <div class="row col2">
+      <div class="block">
+        <h4>Build</h4>
+        <p>
+          Once I have a mockup or draft site that the client is pleased with,
+          the design is layered onto a CMS. Utilizing the latest techniques such
+          as responsive design helps ensure that a client's site is compatible
+          with as many devices as possible and the major browsers.
+        </p>
+      </div>
 
-    <h4>Launch & Evaluation</h4>
-    <p>
-      Once a site is built to a client's satisfaction and is ensured to deliver
-      the best experience on as many devices and browsers as possible, the site
-      goes live! But as any web professional will attest, this is truly only the
-      beginning of a site's life. Using analysis and evaluation once a site has
-      launched, pages can be tweaked to improve search results and user
-      engagement.
-    </p>
+      <div class="block">
+        <h4>Launch & Evaluation</h4>
+        <p>
+          Once a site is built to a client's satisfaction and is ensured to
+          deliver the best experience on as many devices and browsers as
+          possible, the site goes live! But as any web professional will attest,
+          this is truly only the beginning of a site's life. Using analysis and
+          evaluation once a site has launched, pages can be tweaked to improve
+          search results and user engagement.
+        </p>
+      </div>
+    </div>
+    <!-- /.row -->
 
-    <h5>Services I Offer</h5>
-    <ul>
-      <li>Web Design</li>
-      <li>Front-end Development</li>
-      <li>Wordpress CMS Development</li>
-      <li>Concrete5 CMS Development</li>
-      <li>Graphic/Print Design</li>
-    </ul>
+    <div class="row col2">
+      <div class="block">
+        <h4>Services I Offer</h4>
+        <ul>
+          <li>Web Design</li>
+          <li>Front-end Development</li>
+          <li>Wordpress CMS Development</li>
+          <li>Concrete5 CMS Development</li>
+          <li>Graphic/Print Design</li>
+        </ul>
+      </div>
 
-    <h5>Technologies I Use</h5>
-    <ul>
-      <li>Pencil and paper</li>
-      <li>HTML5/CSS3</li>
-      <li>jQuery</li>
-      <li>Concrete5 CMS</li>
-      <li>Wordpress CMS</li>
-      <li>Mura CMS</li>
-    </ul>
+      <div class="block">
+        <h4>Technologies I Can Use</h4>
+        <ul>
+          <li>Pencil and paper</li>
+          <li>HTML5/CSS3</li>
+          <li>jQuery</li>
+          <li>Aurelia Framework</li>
+          <li>Vue.js Library</li>
+          <li>Wordpress CMS</li>
+          <li>PHP</li>
+          <li>.NET MVC</li>
+        </ul>
+      </div>
+    </div>
+    <!-- /.row -->
   </section>
 </template>
 
 <script>
+import PullQuote from '@/components/pull-quote.vue'
+
 export default {
-  name: 'process'
+  name: 'process',
+  components: {
+    PullQuote
+  }
 }
 </script>
 
 <style scoped lang="scss">
 .process {
-  flex: 1 1 auto;
   margin-right: -24px;
   margin-left: -24px;
-  padding: 2.8rem 5.6rem;
+  padding: 1.05rem;
+
+  // MIN-width: 900px
+  @media (min-width: 56.25em) {
+    padding: 2.8rem;
+  }
+
+  // MIN-width: 1140px
+  @media screen and (min-width: 71.25em) {
+    display: grid;
+    grid-template-columns: 2fr minmax(auto, 30.8rem) 1fr 2fr;
+  }
+}
+
+.row {
+  // MIN-width: 1140px
+  @media screen and (min-width: 71.25em) {
+    grid-column: 2 / span 1;
+  }
+}
+
+.col2 {
+  // MIN-width: 1140px
+  @media screen and (min-width: 71.25em) {
+    grid-column: 2 / span 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1.05rem;
+  }
 }
 
 .lead {
   margin-top: 0.525rem;
   font-size: $size-mdl;
   text-transform: uppercase;
+}
+
+.quote {
+  margin-top: 2.8rem;
 }
 </style>

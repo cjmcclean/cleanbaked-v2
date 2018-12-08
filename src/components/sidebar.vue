@@ -1,19 +1,22 @@
 <template>
-  <aside class="sidebar">
-    <div class="brand">
-      <img alt="Clean Baked Studios Pie" src="@/assets/logo-pie.png" />
+  <header class="sidebar">
+    <section class="inner">
+      <div class="brand">
+        <img alt="Clean Baked Studios Pie" src="@/assets/logo-pie.png" />
 
-      <h1 aria-label="Clean Baked Studios">
-        <span class="logo-clean">Clean</span>&nbsp;&nbsp;<span
-          class="logo-baked"
-          >Baked</span
-        ><br />
-        <span class="logo-studio">Studios</span>
-      </h1>
-    </div>
+        <h1 aria-label="Clean Baked Studios">
+          <span class="logo-clean">Clean</span>&nbsp;&nbsp;<span
+            class="logo-baked"
+            >Baked</span
+          ><br />
+          <span class="logo-studio">Studios</span>
+        </h1>
+      </div>
 
-    <sidebar-nav></sidebar-nav>
-  </aside>
+      <sidebar-nav></sidebar-nav>
+    </section>
+    <!-- /.inner -->
+  </header>
 </template>
 
 <script>
@@ -29,17 +32,6 @@ export default {
 
 <style lang="scss">
 .sidebar {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-items: stretch;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 20;
-  width: 32%;
-  padding: 2% 4%;
   background: $cb-blue;
   box-shadow: 8px 16px 0 $cb-red, 16px 36px 0 $cb-orange, 24px 56px 0 $cb-yellow;
 }

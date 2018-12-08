@@ -129,6 +129,10 @@ export default {
   padding: 2.8rem 5.6rem;
   background: $cb-plum;
   color: $cb-gray-light;
+
+  h2 {
+    color: $cb-white;
+  }
 }
 
 .group-label {
