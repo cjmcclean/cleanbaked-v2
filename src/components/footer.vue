@@ -1,13 +1,16 @@
 <template>
   <footer class="footer">
     Copyright &copy; {{ currentYear }} Clean Baked Studios <br />
-    All Rights Reserved
+    All Rights Reserved<br />
+    <span class="attr"
+      >&ldquo;Clean Baked Pie&rdquo; illustrated by Lauren Baker</span
+    >
   </footer>
 </template>
 
 <script>
 export default {
-  name: 'site-footer',
+  name: 'cb-footer',
   data: function() {
     return {
       currentYear: new Date().getFullYear()
@@ -37,6 +40,15 @@ export default {
     padding: 2% 4%;
     background: transparent;
     color: $cb-gray-dark;
+  }
+}
+
+.attr {
+  padding: 0 0.525rem;
+
+  // MIN-width: 900px
+  @media screen and (min-width: 56.25em) {
+    padding: 0;
   }
 }
 </style>

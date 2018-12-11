@@ -712,9 +712,9 @@
   integrity sha512-lRVw09gOvgviOfeUrKc/pmTiRZ7g7oDOU6OAutyuSHpm1/o2RaBQvRhgK8QEdu+FFuw/wnWb29A/iuxv9i8OpQ==
 
 "@types/node@^10.0.5":
-  version "10.12.10"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.10.tgz#4fa76e6598b7de3f0cb6ec3abacc4f59e5b3a2ce"
-  integrity sha512-8xZEYckCbUVgK8Eg7lf5Iy4COKJ5uXlnIOnePN0WUwSQggy9tolM+tDJf7wMOnT/JT/W9xDYIaYggt3mRV2O5w==
+  version "10.12.12"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.12.tgz#e15a9d034d9210f00320ef718a50c4a799417c47"
+  integrity sha512-Pr+6JRiKkfsFvmU/LK68oBRCQeEg36TyAbPhc2xpez24OOZZCuoIhWGTd39VZy6nGafSbxzGouFPTFD/rR1A0A==
 
 "@vue/babel-preset-app@^3.1.0":
   version "3.1.1"
@@ -6240,9 +6240,9 @@ portfinder@^1.0.19, portfinder@^1.0.9:
     mkdirp "0.5.x"
 
 pose-core@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/pose-core/-/pose-core-2.0.0.tgz#1a1497a18a25ed2556d92dd728e909e96df6d67e"
-  integrity sha512-RJcDqYADmuXKQ+uP59oh+EIeRhsuAkKLeVrT25ak57q8TXkEKh8pjL99AHNQLktLUI97erpdNnOp+McK3d/CUQ==
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/pose-core/-/pose-core-2.0.2.tgz#6a0bd1e7218e4bf30be9c26a30be8eeb5b8695df"
+  integrity sha512-NWR8SELdQ+zhG+xD6nHDCdX/tu3fKAFUQ61hJdBic/7WSy/ABYfqpdQIsepBxPWQhHc8WLgPhRal831K/cWrwA==
   dependencies:
     "@types/invariant" "^2.2.29"
     "@types/node" "^10.0.5"
@@ -7805,9 +7805,9 @@ style-value-types@^3.0.6, style-value-types@^3.0.7:
   integrity sha512-7vzeicDiPNnJjvTYfJbQhZ7P3OCkXfvkJOJQ+ifFnXNTA/7KBxMZacHLvlRjM5/TtXbVdrZE6u+2nzSUSPrbSQ==
 
 stylefire@^2.0.7:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/stylefire/-/stylefire-2.3.1.tgz#05b65601d65d717b9ac34ece81160f48d9442009"
-  integrity sha512-RNSf3ofR7n6+DG0zamrx81Ub7b83FqECbK+f4ks8piOogaNhZAKwYeMe5eBOz2cKF7eeD31OgTkfeVTyeGgAdw==
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/stylefire/-/stylefire-2.3.3.tgz#25a32d7aeece8cf2ed499613bf4fb3db18e6dece"
+  integrity sha512-+z2sFuGO1wKRnVgBcm2/z1gmS5s8xXnICnD/1iEI49fChVLvvz65J6AMbw9aftUB06vxGK7lEeewzmoiwWOF4w==
   dependencies:
     framesync "^4.0.0"
     hey-listen "^1.0.4"

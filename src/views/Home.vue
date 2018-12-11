@@ -39,6 +39,7 @@ export default {
 .home {
   flex: 1 1 auto;
   position: relative;
+  min-height: 100vh;
   margin-right: -24px;
   margin-left: -24px;
   padding: 2.8rem 5.6rem;

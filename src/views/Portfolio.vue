@@ -15,6 +15,7 @@ export default {
 <style scoped lang="scss">
 .portfolio {
   flex: 1 1 auto;
+  min-height: 100vh;
   margin-right: -24px;
   margin-left: -24px;
   padding: 2.8rem 5.6rem;

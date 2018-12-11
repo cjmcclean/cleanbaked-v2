@@ -1,22 +1,22 @@
 <template>
   <div id="app">
-    <sidebar class="sidebar" />
+    <cb-sidebar />
 
     <main class="content"><router-view></router-view></main>
 
-    <site-footer />
+    <cb-footer />
   </div>
 </template>
 
 <script>
-import Sidebar from '@/components/sidebar.vue'
-import SiteFooter from '@/components/footer.vue'
+import CbSidebar from '@/components/sidebar.vue'
+import CbFooter from '@/components/footer.vue'
 
 export default {
   name: 'clean-baked',
   components: {
-    Sidebar,
-    SiteFooter
+    CbSidebar,
+    CbFooter
   }
 }
 </script>
@@ -164,25 +164,6 @@ h6 {
   text-align: center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.sidebar {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-items: stretch;
-  padding: 0.67rem;
-
-  // MIN-width: 1140px
-  @media screen and (min-width: 71.25em) {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 20;
-    width: 32%;
-    padding: 2% 4%;
-  }
 }
 
 .content {

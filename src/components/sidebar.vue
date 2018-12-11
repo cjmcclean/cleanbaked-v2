@@ -1,30 +1,40 @@
 <template>
-  <header class="sidebar">
-    <section class="inner">
-      <div class="brand">
-        <img alt="Clean Baked Studios Pie" src="@/assets/logo-pie.png" />
+  <PoseTransition appear>
+    <Sidebar class="sidebar">
+      <section class="inner">
+        <cb-brand />
 
-        <h1 aria-label="Clean Baked Studios">
-          <span class="logo-clean">Clean</span>&nbsp;&nbsp;<span
-            class="logo-baked"
-            >Baked</span
-          ><br />
-          <span class="logo-studio">Studios</span>
-        </h1>
-      </div>
-
-      <sidebar-nav></sidebar-nav>
-    </section>
-    <!-- /.inner -->
-  </header>
+        <sidebar-nav></sidebar-nav>
+      </section>
+      <!-- /.inner -->
+    </Sidebar>
+  </PoseTransition>
 </template>
 
 <script>
+import posed, { PoseTransition } from 'vue-pose'
+import CbBrand from '@/components/brand.vue'
 import SidebarNav from '@/components/nav.vue'
 
 export default {
-  name: 'sidebar',
+  name: 'cb-sidebar',
   components: {
+    PoseTransition,
+    Sidebar: posed.header({
+      enter: {
+        opacity: 1,
+        x: 0,
+        beforeChildren: true,
+        staggerChildren: 56,
+        transition: { duration: 560, ease: 'easeIn' }
+      },
+      exit: {
+        opacity: 0,
+        x: '-100%',
+        transition: { duration: 280, ease: 'easeIn' }
+      }
+    }),
+    CbBrand,
     SidebarNav
   }
 }
@@ -32,72 +42,23 @@ export default {
 
 <style lang="scss">
 .sidebar {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 0.67rem;
   background: $cb-blue;
   box-shadow: 8px 16px 0 $cb-red, 16px 36px 0 $cb-orange, 24px 56px 0 $cb-yellow;
-}
 
-.brand {
-  img {
-    position: relative;
-    z-index: 10;
-    transform: rotate(-12deg) translateX(-4px);
-  }
-
-  h1 {
-    position: relative;
-    z-index: 20;
-    margin: 0;
-    color: $cb-white;
-    font-size: 24px;
-    font-family: $leagueSpartan;
-    text-transform: uppercase;
-    transform: translateY(-44px);
-  }
-
-  .logo-clean,
-  .logo-baked {
-    display: inline-block;
-    position: relative;
-    margin-bottom: 32px;
-  }
-
-  .logo-clean {
-    margin-left: -16px;
-    font-size: 52px;
-    font-family: $blackoutMidnight;
-    transform: skew(-2deg, 28deg);
-  }
-
-  .logo-baked {
+  // MIN-width: 1140px
+  @media screen and (min-width: 71.25em) {
+    position: fixed;
     top: 0;
-    font-size: 56px;
-    font-family: $pacifico;
-    text-transform: initial;
-    transform: skew(-2deg, -28deg);
-  }
-
-  .logo-studio {
-    display: inline-block;
-    position: relative;
-    letter-spacing: 2px;
-
-    &::before,
-    &::after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: -92px;
-      width: 72px;
-      height: 1px;
-      margin-top: -4px;
-      background: $cb-white;
-    }
-
-    &::after {
-      right: -92px;
-      left: auto;
-    }
+    bottom: 0;
+    left: 0;
+    z-index: 20;
+    width: 32%;
+    padding: 2% 4%;
   }
 }
 </style>

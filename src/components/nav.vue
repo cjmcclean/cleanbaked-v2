@@ -1,17 +1,37 @@
 <template>
   <div class="sidebar-nav" role="navigation">
-    <router-link to="/">Home</router-link>
-    <router-link to="/portfolio">Portfolio</router-link>
-    <router-link to="/process">Process</router-link>
-    <router-link to="/about">About</router-link>
-    <router-link to="/contact">Contact</router-link>
-    <router-link to="/vue-docs" v-if="checkMode">Vue Docs</router-link>
+    <cb-link><router-link to="/">Home</router-link></cb-link>
+    <cb-link><router-link to="/portfolio">Portfolio</router-link></cb-link>
+    <cb-link><router-link to="/process">Process</router-link></cb-link>
+    <cb-link><router-link to="/about">About</router-link></cb-link>
+    <cb-link><router-link to="/contact">Contact</router-link></cb-link>
+    <cb-link
+      ><router-link to="/vue-docs" v-if="checkMode"
+        >Vue Docs</router-link
+      ></cb-link
+    >
   </div>
 </template>
 
 <script>
+import posed from 'vue-pose'
+
 export default {
   name: 'sidebar-nav',
+  components: {
+    CbLink: posed.div({
+      enter: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 280, ease: 'easeIn' }
+      },
+      exit: {
+        opacity: 0,
+        y: 20,
+        transition: { duration: 280, ease: 'easeIn' }
+      }
+    })
+  },
   computed: {
     checkMode: function() {
       const mode = process.env.NODE_ENV

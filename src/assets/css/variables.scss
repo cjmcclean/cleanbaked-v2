@@ -1,4 +1,4 @@
-/* Font Families */
+// Font Families
 $blackoutMidnight: 'Blackout Midnight', sans-serif;
 $blackoutSunrise: 'Blackout Sunrise', sans-serif;
 $blackoutTwoAM: 'Blackout TwoAM', sans-serif;
@@ -13,7 +13,7 @@ $ostrichInline: 'Ostrich Sans Inline', sans-serif;
 $lato: 'Lato', 'Avenir', Helvetica, Arial, sans-serif;
 $pacifico: 'Pacifico', cursive;
 
-/* Font Sizes */
+// Font Sizes
 $size-xs: 0.75rem; // 12px
 $size-sm: 0.875rem; // 14px
 $size-reg: 1rem; // 16px
@@ -25,14 +25,14 @@ $size-xxl: 2.25rem; // 36px
 $size-xxxl: 3rem; // 48px
 $size-super: 4rem; // 64px
 
-/* Vertical Rhythm */
+// Vertical Rhythm
 $line-height: 1.375;
 
-/* Colors - Wheeler Central Theme */
+// Colors - Wheeler Central Theme
 $wc-blue: #01568c;
 $wc-orange: #ff9301;
 
-/* Colors - Clean Baked Theme */
+// Colors - Clean Baked Theme
 $cb-orange: #e55029;
 $cb-yellow: #ffd97b;
 $cb-red: #a60027;
@@ -41,7 +41,7 @@ $cb-blue: #191c26;
 $cb-green: #8bc441;
 $cb-brown: #dac0a2;
 
-/* Colors - UI */
+// Colors - UI
 $cb-white: #fff;
 $cb-cream: #efefef;
 $cb-ghostwhite: #e8e8e8;
@@ -52,7 +52,7 @@ $cb-black: #383838;
 $cb-black-light: #424242;
 $cb-black-dark: #101010;
 
-/* Easings */
+// Easings
 $easeInOutSine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 $easeInQuad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
 $easeOutQuad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
