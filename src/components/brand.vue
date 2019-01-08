@@ -21,12 +21,12 @@ export default {
       enter: {
         opacity: 1,
         y: 0,
-        transition: { duration: 280, ease: 'easeIn' }
+        transition: { duration: 200, ease: 'easeIn' }
       },
       exit: {
         opacity: 0,
         y: -20,
-        transition: { duration: 280, ease: 'easeIn' }
+        transition: { duration: 200, ease: 'easeIn' }
       }
     })
   }

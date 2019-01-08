@@ -1,28 +1,47 @@
 <template>
-  <section class="home">
-    <h2>Hello there and welcome.</h2>
+  <PoseTransition appear mode="out-in">
+    <route-section class="home">
+      <h2>Hello there and welcome.</h2>
 
-    <p class="lead">
-      I'm a UI/UX designer & developer.<br />
-      I build awesome, highly-functional websites and apps tailored to your
-      business&rsquo; needs and goals.
-    </p>
+      <p class="lead">
+        I'm a UI/UX designer & developer.<br />
+        I build awesome, highly-functional websites and apps tailored to your
+        business&rsquo; needs and goals.
+      </p>
 
-    <btn btn-theme="btn-blue" :onClick="getInTouch"
-      >Let&rsquo;s Start a Conversation</btn
-    >
+      <cb-btn btn-theme="btn-blue" :onClick="getInTouch">
+        Let&rsquo;s Start a Conversation
+      </cb-btn>
 
-    <btn btn-theme="btn-yellow" :onClick="viewPortfolio">See My Work</btn>
-  </section>
+      <cb-btn btn-theme="btn-yellow" :onClick="viewPortfolio">
+        See My Work
+      </cb-btn>
+    </route-section>
+  </PoseTransition>
 </template>
 
 <script>
-import Btn from '@/components/btn.vue'
+import posed, { PoseTransition } from 'vue-pose'
+import CbBtn from '@/components/btn.vue'
 
 export default {
   name: 'home',
   components: {
-    Btn
+    CbBtn,
+    PoseTransition,
+    RouteSection: posed.section({
+      enter: {
+        opacity: 1,
+        y: 0,
+        beforeChildren: true,
+        transition: { duration: 420, delay: 0, ease: 'easeInOut' }
+      },
+      exit: {
+        opacity: 0,
+        y: '100%',
+        transition: { duration: 240, ease: 'easeInOut' }
+      }
+    })
   },
   methods: {
     getInTouch() {
@@ -39,7 +58,8 @@ export default {
 .home {
   flex: 1 1 auto;
   position: relative;
-  min-height: 100vh;
+  min-height: 72vh;
+  max-height: 80vh;
   margin-right: -24px;
   margin-left: -24px;
   padding: 2.8rem 5.6rem;

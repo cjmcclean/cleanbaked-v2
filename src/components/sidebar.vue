@@ -26,7 +26,7 @@ export default {
         x: 0,
         beforeChildren: true,
         staggerChildren: 56,
-        transition: { duration: 560, ease: 'easeIn' }
+        transition: { duration: 360, ease: 'easeIn' }
       },
       exit: {
         opacity: 0,

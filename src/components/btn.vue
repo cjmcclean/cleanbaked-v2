@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: 'btn',
+  name: 'cb-btn',
   props: {
     btnTheme: {
       default: 'btn-default'

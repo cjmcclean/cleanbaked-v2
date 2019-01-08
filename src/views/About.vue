@@ -1,83 +1,100 @@
 <template>
-  <section class="about">
-    <div class="row">
-      <h2>The Clean Baked Project</h2>
+  <PoseTransition appear mode="out-in">
+    <route-section class="about">
+      <div class="row">
+        <h2>The Clean Baked Project</h2>
 
-      <p>
-        Whew! This is a major rebuild and redesign after letting my personal web
-        presence languish for several years. This project is also a
-        consolidation of my web presences. Previously, my portfolio and resume
-        were kept under the &ldquo;Wheeler Central Studios&rdquo; brand, and the
-        &ldquo;Clean Baked Studios&rdquo; brand was a joint venture between a
-        friend and I. After the project had been defunct for several years I
-        decided this was a more interesting brand, so it&rsquo;s being
-        appropriated for this project! :D
-      </p>
+        <p>
+          Whew! This is a major rebuild and redesign after letting my personal
+          web presence languish for several years. This project is also a
+          consolidation of my web presences. Previously, my portfolio and resume
+          were kept under the &ldquo;Wheeler Central Studios&rdquo; brand, and
+          the &ldquo;Clean Baked Studios&rdquo; brand was a joint venture
+          between a friend and I. After the project had been defunct for several
+          years I decided this was a more interesting brand, so it&rsquo;s being
+          appropriated for this project! :D
+        </p>
 
-      <p>
-        As I&rsquo;m starting from the ground up, it's a great opportunity to
-        play with all the latest tools! This project is built with ES6
-        Javascript compiled by Babel configured by Webpack with linting and
-        hinting provided by eslint and Prettier.js. I'm using the Vue.js
-        library, along with Vue-Router. I&rsquo;m compiling the project using
-        their provided Vue-CLI. The site will be built to support PWA
-        capabilities, while being responsive to all device sizes. I'm using the
-        latest CSS modules such as Grid Layout and Flexbox, using a mobile-first
-        design methodology.
-      </p>
+        <p>
+          As I&rsquo;m starting from the ground up, it's a great opportunity to
+          play with all the latest tools! This project is built with ES6
+          Javascript compiled by Babel configured by Webpack with linting and
+          hinting provided by eslint and Prettier.js. I'm using the Vue.js
+          library, along with Vue-Router. I&rsquo;m compiling the project using
+          their provided Vue-CLI. The site will be built to support PWA
+          capabilities, while being responsive to all device sizes. I'm using
+          the latest CSS modules such as Grid Layout and Flexbox, using a
+          mobile-first design methodology.
+        </p>
 
-      <h2>About Me</h2>
+        <h2>About Me</h2>
 
-      <p>
-        I am a {{ myAge }}-year old native of Houston, TX, and have spent most
-        of my life here. I taught myself HTML and CSS in 2007, turning a
-        life-long love of technology into a career. Since then I have been
-        expanding my repertoire, learning Javascript (mostly jQuery-based) and a
-        bit of PHP. I have a background in Advertising through my Bachelor of
-        Arts in Communications&ndash;Advertising/PR from the University of
-        Houston (UH), which I graduated from in 2009. <br /><br />
-        I love to play Ultimate Frisbee, which I do as often as possible. I am
-        also an avid snowboarder, and I go whenever the chance presents itself.
-        When I'm not on the slopes or on the field, I like to keep things
-        relaxed: dinners, gaming, and movie nights are my preferred activities.
-        Now you know a little about me! =)
-      </p>
+        <p>
+          I am a {{ myAge }}-year old native of Houston, TX, and have spent most
+          of my life here. I taught myself HTML and CSS in 2007, turning a
+          life-long love of technology into a career. Since then I have been
+          expanding my repertoire, learning Javascript (mostly jQuery-based) and
+          a bit of PHP. I have a background in Advertising through my Bachelor
+          of Arts in Communications&ndash;Advertising/PR from the University of
+          Houston (UH), which I graduated from in 2009. <br /><br />
+          I love to play Ultimate Frisbee, which I do as often as possible. I am
+          also an avid snowboarder, and I go whenever the chance presents
+          itself. When I'm not on the slopes or on the field, I like to keep
+          things relaxed: dinners, gaming, and movie nights are my preferred
+          activities. Now you know a little about me! =)
+        </p>
 
-      <h2>My Design Philosophy</h2>
+        <h2>My Design Philosophy</h2>
 
-      <p>
-        I have a strong belief that design is extremely important. Everything
-        that can be designed, should be. When design and function meet, beauty
-        is achieved. To this end I work hard to understand my client&rsquo;s
-        needs and goals. This helps ensure my work maximizes my clients&rsquo;
-        ROI. <br /><br />
-        I also love to be on the bleeding edge of technology. While keeping up
-        with and using the latest techniques is something I am devoted to,
-        it&lsquo;s also something that helps ensure my work is highly compatible
-        and accessible. <br /><br />
-        If these sound like desirable traits to have in your designer, then send
-        me an email below!
-      </p>
+        <p>
+          I have a strong belief that design is extremely important. Everything
+          that can be designed, should be. When design and function meet, beauty
+          is achieved. To this end I work hard to understand my client&rsquo;s
+          needs and goals. This helps ensure my work maximizes my clients&rsquo;
+          ROI. <br /><br />
+          I also love to be on the bleeding edge of technology. While keeping up
+          with and using the latest techniques is something I am devoted to,
+          it&lsquo;s also something that helps ensure my work is highly
+          compatible and accessible. <br /><br />
+          If these sound like desirable traits to have in your designer, then
+          send me an email below!
+        </p>
 
-      <btn btn-theme="btn-blue" :onClick="resumeClick" ref="resumeBtn">
-        My Resume
-      </btn>
+        <cb-btn btn-theme="btn-blue" :onClick="resumeClick" ref="resumeBtn">
+          My Resume
+        </cb-btn>
 
-      <btn btn-theme="btn-yellow" :onClick="contactClick" ref="contactBtn">
-        Get In Touch
-      </btn>
-    </div>
-    <!-- /.row -->
-  </section>
+        <cb-btn btn-theme="btn-yellow" :onClick="contactClick" ref="contactBtn">
+          Get In Touch
+        </cb-btn>
+      </div>
+      <!-- /.row -->
+    </route-section>
+  </PoseTransition>
 </template>
 
 <script>
-import Btn from '@/components/btn.vue'
+import posed, { PoseTransition } from 'vue-pose'
+import CbBtn from '@/components/btn.vue'
 
 export default {
   name: 'about',
   components: {
-    Btn
+    CbBtn,
+    PoseTransition,
+    RouteSection: posed.section({
+      enter: {
+        opacity: 1,
+        y: 0,
+        beforeChildren: true,
+        transition: { duration: 420, delay: 0, ease: 'easeInOut' }
+      },
+      exit: {
+        opacity: 0,
+        y: '100%',
+        transition: { duration: 240, ease: 'easeInOut' }
+      }
+    })
   },
   data: function() {
     return {

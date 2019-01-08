@@ -2,8 +2,7 @@
   <div id="app">
     <cb-sidebar />
 
-    <main class="content"><router-view></router-view></main>
-
+    <main class="content"><router-view state=""></router-view></main>
     <cb-footer />
   </div>
 </template>
@@ -17,7 +16,18 @@ export default {
   components: {
     CbSidebar,
     CbFooter
-  }
+  },
+  watch: {
+    // eslint-disable-next-line
+    $route: function (to, from) {
+      // eslint-disable-next-line
+      console.log(to, from)
+      // const toDepth = to.path.split('/').length
+      // const fromDepth = from.path.split('/').length
+      // this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
+    }
+  },
+  created: function() {}
 }
 </script>
 
@@ -36,17 +46,20 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 
-  // nested rule(s)
-  @media (min-width: 640px) {
+  // queries
+  // MIN-width: 640px
+  @media (min-width: 40em) {
     font-size: 125%;
     line-height: 1.4;
   }
 
-  @media (min-width: 900px) {
+  // MIN-width: 900px
+  @media (min-width: 56.25em) {
     font-size: 131.25%;
   }
 
-  @media (min-width: 1100px) {
+  // MIN-width: 1100px
+  @media (min-width: 68.75em) {
     font-size: 137.5%;
   }
 }
@@ -159,7 +172,6 @@ h6 {
   width: 100%;
   height: 100%;
   color: $cb-black;
-  font-size: $size-reg;
   font-family: $lato;
   text-align: center;
   -webkit-font-smoothing: antialiased;
@@ -168,7 +180,7 @@ h6 {
 
 .content {
   display: flex;
-  overflow-x: hidden;
+  overflow: hidden;
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: stretch;
